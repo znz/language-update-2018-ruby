@@ -1,6 +1,6 @@
 # Language Update 2018 - Ruby
 
-[Learn Languages 2018]() の Language Update の Ruby です。
+[Learn Languages 2018](https://connpass.com/event/95443/) の Language Update の Ruby です。
 
 ## 作者向け
 
