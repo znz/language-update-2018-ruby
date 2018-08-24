@@ -15,6 +15,14 @@ allotted-time
 theme
 :   lightning-simple
 
+# agenda
+
+- リリース間隔 について
+- 2.4.0, 2.5.0 での変更点
+- 2.5.0 での主な非互換になる変更点
+- 2.4.0 での大きな非互換
+- 2.6.0 での大きな話
+
 # LLoT 以降のリリースなど
 
 - 2016-08-27 LLoT (前回の Language Update)
@@ -22,6 +30,7 @@ theme
 - 2017-03-31 2.1 EOL
 - 2017-12-25 2.5.0
 - 2018-03-31 2.2 EOL
+- 2018 クリスマス 2.6.0 リリース予定
 
 <https://bugs.ruby-lang.org/projects/ruby/wiki/ReleaseEngineering>
 
@@ -39,7 +48,7 @@ theme
   - 2.4.0 で追加
   - 2.5.0 でデフォルト true に
 
-# 2.5.0 での変更点
+# 2.5.0 での主な非互換になる変更点
 
 - rescue/else/ensure が do/end ブロック内にも直接書ける
 - トップレベルの定数検索は削除
@@ -50,7 +59,6 @@ IO::GC #=> warning: toplevel constant GC referenced by IO::GC
 2.5 以降:
 IO::GC #=> NameError (uninitialized constant IO::GC)
 ```
-
 
 # backtrace の順番
 
@@ -117,3 +125,26 @@ experimental なので今後の議論次第でまた変わるかも
   <https://www.hsbt.org/diary/20160829.html>
 - 結局 json 1.8.5 がリリースされて解決
   <https://www.hsbt.org/diary/20170112.html>
+
+# 2.6.0 の大きな変更点
+
+- safe level 廃止に向けた変更が進む
+- endless range : `(1..)`
+- JIT (Just-in-time) 対応が入る
+
+# safe level 廃止に向けた変更
+
+- `$SAFE` が 0 に戻せるようになる
+- `Proc#call` で切り替わらなくなる
+
+# endless range
+
+- `(1..Float::INFINITY)` や `1.step` の代わりに `(1..)`
+- `when (1..)` などではかっこが必要
+
+# JIT 対応
+
+- 実行中に gcc や clang でコンパイルする
+- とりあえず仕組みが入った段階
+- プログラムによっては遅くなることもある
+- 高速化などは今後の課題
