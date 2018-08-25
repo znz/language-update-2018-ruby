@@ -25,8 +25,8 @@ theme
 
 - リリース間隔 について
 - 2.4.0, 2.5.0 での変更点
-- 2.5.0 での主な非互換
 - 2.4.0 での大きな非互換
+- 2.5.0 での主な非互換
 - 2.6.0 での大きな話
 
 # LLoT 以降のリリースなど
@@ -123,18 +123,19 @@ Traceback (most recent call last):
 .../time.rb:254:in `make_time': no time information in "" (ArgumentError)
 ```
 
-状況によって古い挙動:
+状況によっては以前と同じ挙動:
 
 ```
 $ ruby -r time -e 'Time.parse("")' 2>&1 | cat
 .../time.rb:254:in `make_time': no time information in "" (ArgumentError)
-	from .../time.rb:370:in `parse'
-	from -e:1:in `<main>'
+        from .../time.rb:370:in `parse'
+        from -e:1:in `<main>'
 ```
 
-experimental なので今後の議論次第でまた変わるかも
+- experimental なので今後の議論次第で変わるかも?
+  - 参考: Feature #8661 <https://bugs.ruby-lang.org/issues/8661>
 
-# 2.6.0 の大きな変更点
+# 2.6.0 の大きな変更点の一部
 
 - safe level 廃止に向けた変更が進む
 - endless range : `(1..)`
@@ -162,6 +163,8 @@ experimental なので今後の議論次第でまた変わるかも
 - x.y.0 リリースは毎年クリスマス
 - EOL は3年+年度末までが続いている
 - 2.4.0, 2.5.0 での変更点
-- 2.5.0 での主な非互換
 - 2.4.0 での大きな非互換
-- 2.6.0 での大きな話
+  - json gem で起きた問題の話
+- 2.5.0 での主な非互換
+- 2.6.0 での大きな変更点の一部
+  - safe level, endless range, JIT
