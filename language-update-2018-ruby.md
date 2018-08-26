@@ -10,7 +10,7 @@ date
 :   2018/08/26
 
 allotted-time
-:   10m
+:   15m
 
 theme
 :   lightning-simple
