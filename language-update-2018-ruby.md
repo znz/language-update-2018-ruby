@@ -9,6 +9,9 @@ content-source
 date
 :   2018/08/26
 
+institution
+:   株式会社Ruby開発
+
 allotted-time
 :   15m
 
